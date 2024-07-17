@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+:root{
+  --Dark-Gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Dark-Gray: hsl(0, 0%, 27%);
+}
+
+a{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+}
+
+body{
+  font-family: "League Spartan", sans-serif;
+  height: 100vh;
+}
+
+
+.container{
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  height: 100%;
+  width: 100%;
+}
+
+
+.container .row-1{
+  display: grid;
+  grid-template-columns: repeat(2,2fr);
+}
+
+
+.container .row-1 .col-1{
+  position: relative;
+  width: 100%;
+}
+
+
+.container .row-1 .col-1 .nav{
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+
+.container .row-1 .col-1 .nav #logo{
+  padding-right: 20px;
+  color: var(--White);
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.container .row-1 .col-1 .nav ul{
+  display: flex;
+  align-items: center;
+}
+
+
+.container .row-1 .col-1 .nav ul a{
+  padding: 0 8px;
+  color: var(--White);
+  font-size: 13px;
+  position: relative;
+}
+
+.container .row-1 .col-1 .nav ul a:hover::before{
+  display: block;
+}
+
+
+.container .row-1 .col-1 .nav ul a::before{
+  display: none;
+  position: absolute;
+  content: "";
+  height: 1px;
+  width: 18px;
+  left: 30%;
+  top: 125%;
+  background-color: var(--White);
+  border-radius: 8px;
+  transition: all 0.6s ease;
+}
+
+
+.container .row-1 .col-1 .nav .control{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: var(--Black);
+  bottom: 0;
+  right: -108px;
+  z-index: 1000;
+  transition: all 1s ease-in-out;
+}
+
+.container .row-1 .col-1 .nav .control div{
+  padding: 15px 20px;
+}
+
+.container .row-1 .col-1 .nav .control div:hover{
+  background-color: var(--Dark-Gray);
+}
+
+
+.container .row-1 .col-1::before{
+  position: absolute;
+  content: "";
+  background: url("./desktop-image-hero-1.jpg") center center/cover no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+.heading{
+  color: var(--Black);
+
+  font-weight: 700;
+}
+
+
+.container .row-1 .col-2{
+  display: flex;
+
+}
+
+
+.container .row-1 .col-2 .para{
+  padding: 40px 4rem 0;
+}
+
+.container .row-1 .col-2 .para .heading{
+  font-size: 40px;
+}
+
+p{
+  color: var(--Dark-Gray);
+  margin: 12px 0;
+}
+
+.container .row-1 .col-2 .para a{
+  display: flex;
+  align-items: center;
+  color: var(--Black);
+  letter-spacing: 13px;
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.container .row-2{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+
+.container .row-2 .col-1{
+  position: relative;
+  width: 100%;
+}
+
+.container .row-2 .col-1::before{
+  position: absolute;
+  content: "";
+  background: url("./image-about-dark.jpg") center center/cover no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.container .row-2 .col-2{
+  padding: 18px 20px;
+}
+
+
+
+.container .row-2 .col-2 .heading{
+  font-size: 17px;
+  letter-spacing: 8px;
+}
+
+
+
+.container .row-2 .col-3{
+  position: relative;
+  width: 100%;
+}
+
+
+.container .row-2 .col-3::before{
+  position: absolute;
+  content: "";
+  background: url("./image-about-light.jpg") center center/cover no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 800px){
+
+  .container{
+    row-gap: 3rem;
+  }
+  .container .row-1,.container .row-2{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.container .row-1 .col-1 .nav .control{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.container .row-1{
+  grid-template-rows: 2fr 1fr;
+}
+
+.container .row-2{
+  grid-template-rows: 2fr 1fr 2fr;
+}
+}
+
+.icon-res{
+  display: none;
+}
+
+
+.res-nav{
+  display: none;
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--White);
+  z-index: 100;
+  padding: 10px 15px;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+}
+
+.res-nav ul{
+  display: flex;
+  align-items: center;
+}
+
+.res-nav ul a{
+  padding: 0 15px;
+  color: var(--Black);
+}
+
+
+.close{
+  padding-right: 20px;
+}
+
+@media (max-width: 400px){
+  .icon-res{
+    display: block;
+  }
+  .container .row-1 .col-1 .nav #logo{
+    margin: auto;
+  }
+
+  .container .row-1 .col-1 .nav ul{
+    display: none;
+  }
+
+  .res-nav.active{
+    display: block;
+    transform: translateX(0%);
+  }
+}
